@@ -11,7 +11,7 @@
 using std::string;
 
 class Triangle : public Shape{
-	double _a, _b, _c;
+	double _b, _c;
 public:
 	Triangle(double a, double b, double c);
 	virtual string ToString()const;
@@ -21,6 +21,8 @@ public:
 	virtual double AngleAB()const;
 	virtual double AngleBC()const;
 	virtual double AngleAC()const;
+
+    double _a;
 };
 
 

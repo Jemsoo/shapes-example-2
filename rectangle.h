@@ -10,12 +10,14 @@
 using std::string;
 
 class Rectangle : public Shape{
-	double _base, _height;
+	double _height;
 public:
 	Rectangle(double base, double height);
 	virtual string ToString()const;
 	virtual double Area()const;
 	virtual double Perimeter()const;
+
+    double _base;
 };
 
 

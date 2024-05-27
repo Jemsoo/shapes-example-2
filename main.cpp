@@ -63,6 +63,7 @@ int main() {
 			cin >> length;
 			shapes.push_back(new Square(length));
 			cout << "Inserted... " << endl << endl;
+
 		}else if (menuOption == 7){ // List all Ellipses
 			cout << "Only Ellipses" << endl;
 			for (Shape* shape: shapes){
@@ -75,9 +76,32 @@ int main() {
 					cout << endl;
 				}
 			}
+
 		}else if (menuOption == 8){ // List all Triangles
+            cout << "Only Triangles" << endl;
+            for(Shape* shape: shapes){
+                if (dynamic_cast<Triangle*>(shape)!= nullptr){
+                    Triangle* triangle = dynamic_cast<Triangle*>(shape);
+                    cout << shape -> ToString() << endl;
+                    cout << "\tPerimeter:       " << shape ->Perimeter() << endl;
+                    cout << "\tArea:            " << shape -> Area()<< endl;
+                    cout << "\tAngleAB:         " << triangle ->AngleAB() << endl;
+                    cout << "\tAngleBC:         " << triangle ->AngleBC() << endl;
+                    cout << "\tAngleAC:         " << triangle ->AngleAC() << endl;
+                    cout << "\tHypotenuse:      " << triangle ->Hypotenuse() << endl;
+                }
+            }
 
 		}else if (menuOption == 9){ // List all Rectangles
+            cout << "Only Rectangles" << endl;
+            for (Shape* shape: shapes) {
+                if (dynamic_cast<Rectangle *>(shape) != nullptr) {
+                    Rectangle *rectangle = dynamic_cast<Rectangle *>(shape);
+                    cout << shape->ToString() << endl;
+                    cout << "\tPerimeter:       " << shape->Perimeter() << endl;
+                    cout << "\tArea:            " << shape->Area() << endl;
+                }
+            }
 
 		}else if (menuOption == 10){ // List all shapes
 			for (Shape* shape: shapes){
